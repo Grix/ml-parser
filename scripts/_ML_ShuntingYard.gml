@@ -1,5 +1,5 @@
-///_ML_ShuntingYard(parser, tokens, rpn)
-/// @argType    r,r,r
+///_ML_ShuntingYard(parser, tokens)
+/// @argType    r,r
 /// @returnType real
 /// @hidden     true
 
@@ -15,7 +15,7 @@ allargnum = ds_stack_create();
 allparenthesis = ds_stack_create();
 
 curstack = ds_stack_create();
-curoutput = argument2;
+curoutput = ds_queue_create();
 curparenthesis = 1;
 curargnum = 1;
 curlevel = 0;
@@ -37,7 +37,7 @@ while (i < s && !endtok) { //while there are tokens to be read
     break;
     case ML_TT_LEFTP:
         _ML_SY_HandleLeftPar(token, curstack);
-        ++curparenthesis;
+        curparenthesis += 1;
     break;
     case ML_TT_FUNCTION:
         if (curargnum == 0) curargnum = 1;
@@ -46,9 +46,9 @@ while (i < s && !endtok) { //while there are tokens to be read
         ds_stack_push(allargnum, curargnum);
         ds_stack_push(allparenthesis, curparenthesis);
         _ML_SY_HandleFunction(token, curstack);
-        ++curlevel;
+        curlevel += 1;
         curstack = ds_stack_create();
-        curoutput = ds_list_create();
+        curoutput = ds_queue_create();
         curargnum = 0;
         curparenthesis = -1;
     break;
@@ -63,7 +63,7 @@ while (i < s && !endtok) { //while there are tokens to be read
     break;
     case ML_TT_ARGSEP:
         _ML_SY_HandleArgSep(parser, token, curoutput, curstack);
-        ++curargnum;
+        curargnum += 1;
     break;
     case ML_TT_COMMA: //special case - need to recheck comma's to check against function seperation
         if (curparenthesis == 0) {
@@ -99,19 +99,19 @@ while (i < s && !endtok) { //while there are tokens to be read
             }
             _ML_LEX_TokenSetType(parser, token, v);
         }
-        --i;
+        i-=1;
     break;
     case ML_TT_RIGHTP:
         if (_ML_SY_HandleRightPar(parser, token, curoutput, curstack, curargnum, alloutput, allstack, curlevel)) {
             ds_stack_destroy(curstack);
-            ds_list_destroy(curoutput);
+            ds_queue_destroy(curoutput);
             curoutput = ds_stack_pop(alloutput);
             curstack = ds_stack_pop(allstack);
             curargnum = ds_stack_pop(allargnum);
             curparenthesis = ds_stack_pop(allparenthesis);
-            --curlevel;
+            curlevel -= 1;
         } else {
-            --curparenthesis;
+            curparenthesis -= 1;
         }
     break;
     case ML_TT_EOL:
@@ -136,7 +136,7 @@ while (i < s && !endtok) { //while there are tokens to be read
     break;
     
     }
-    ++i;
+    i+=1;
 }
 var tstack, toutput;
 repeat (ds_stack_size(allstack)) {
@@ -144,7 +144,7 @@ repeat (ds_stack_size(allstack)) {
 }
 ds_stack_destroy(allstack);
 repeat (ds_stack_size(alloutput)) {
-    ds_list_destroy(ds_stack_pop(alloutput));
+    ds_queue_destroy(ds_stack_pop(alloutput));
 }
 ds_stack_destroy(alloutput);
 ds_stack_destroy(allargnum);

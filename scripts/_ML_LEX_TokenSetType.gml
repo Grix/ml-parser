@@ -57,3 +57,4 @@ switch (tokentype) {
 
 _ML_LiTok_SetType(tok, tokentype);
 _ML_LiTok_SetOperator(tok, operator);
+

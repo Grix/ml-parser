@@ -5,7 +5,7 @@
 
 /*
 **  Usage:
-**      ML_RaiseException(parser, Exception,position,[string])
+**      ML_RaiseException(parser, Exception,position,[string,token])
 **
 **  Arguments:
 **      Parser      Parser id

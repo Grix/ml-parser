@@ -1,6 +1,6 @@
 ///ML_VM_GetVar(parser, key)
-/// @argType    r, s
-/// @returnType auto
+/// @argType    r, any
+/// @returnType string
 /// @hidden     false
 /*
 **  Usage:
@@ -18,3 +18,4 @@
 
 var VARMAP =  _ML_LiP_GetVarMap(argument0);
 return ds_map_find_value(VARMAP, argument1);
+

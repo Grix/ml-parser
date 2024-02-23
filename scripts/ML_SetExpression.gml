@@ -16,5 +16,5 @@
 
 
 _ML_LiP_SetFunctionString(argument0, argument1);
-var res_obj = _ML_LiP_GetResultObject(argument0);
-_ML_LiRO_SetCalculated(res_obj, false);
+_ML_LiP_SetCalculated(argument0, false);
+

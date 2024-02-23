@@ -3,4 +3,4 @@
 /// @returnType string
 /// @hidden     false
 
-return ML_ResObj_GetAnswerType(_ML_LiP_GetResultObject(argument0), argument1);
+return _ML_LiP_GetAnswerType(argument0, argument1);

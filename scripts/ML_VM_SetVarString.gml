@@ -1,5 +1,5 @@
 ///ML_VM_SetVarString(parser, key, value)
-/// @argType    r ,s, s
+/// @argType    r ,r, s
 /// @returnType void
 /// @hidden     false
 /*
@@ -19,4 +19,9 @@ var key, value;
 key = argument1;
 value = argument2;
 var VARMAP = _ML_LiP_GetVarMap(argument0);
-VARMAP[? key] = value;
+if (ds_map_exists(VARMAP, key)) {
+    ds_map_replace(VARMAP, key, value);
+} else {
+    ds_map_add(VARMAP, key, value);
+}
+
