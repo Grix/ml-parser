@@ -1,6 +1,3 @@
-///ML_LastException_CurParser()
-/// @argType    
-/// @returnType real
-/// @hidden     false
+///ML_LastException_CurParser(parser)
 
 return ML_LastException(global._ML_CURRENTPARSER_);

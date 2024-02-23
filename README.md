@@ -7,9 +7,18 @@ Mirror of the original (now archived and largely broken) repository at Google Co
 
 I have tried to reconstruct the original SVN repo as best I could, with git branches for a total of three SVN branches. It is unclear which is the newest version. The scripts were made for old GM versions but should be compatible with new GMS2 also. Maybe now example project or extension files though.
 
-This is the trunk branch, with the following comment in the original readme: 
+This is the "no_objects" branch, with the following comment in the original readme: 
 
-**Input in rmShowComp**
-**[enter] Execute compilation**
-**[ctrl] Compile + execute**
-**[alt] Interpet**
+
+bugs fixed: 
+-	-ternary operator removal by string
+-	-strinified tokens
+-	_ML_SY_HandleEOL var t missing
+-	_ML_SY_HandleExprTerminator var t missing
+-	tokenstring can be reals
+-	scope of the tokenlist
+-	_ML_ClearTernaryOper
+
+TODO:
+-	Error token removal
+-	exact signature object argument type removal

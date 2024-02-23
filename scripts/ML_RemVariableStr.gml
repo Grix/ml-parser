@@ -1,7 +1,4 @@
 ///ML_RemVariableStr(parser, VarString) 
-/// @argType    r,s
-/// @returnType void
-/// @hidden     false
 //destroys variable - DOES NOT DESTROY IN MAP WITH VALUES
 
 

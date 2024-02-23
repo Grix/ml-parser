@@ -1,11 +1,8 @@
-///_ML_LEX_IsValue(token, prevtok)
-/// @argType    r,r
-/// @returnType r
-/// @hidden     true
+///_ML_LEX_IsValue(parser, str, prevtok)
 
 var vstr, i, s, prevtok;
-vstr = string(_ML_LiTok_GetVal(argument0));
-prevtok = argument1;
+vstr = string(_ML_LiTok_GetVal(argument1));
+prevtok = argument2;
 if (vstr == ".") return false;
 var start_c;
 start_c = string_char_at(vstr,1);
@@ -18,7 +15,7 @@ i = 1;
 var c;
 do {
     c = string_char_at(vstr,i);
-    ++i;
+    i+=1;
     if (c == ".") break;
     if !_ML_LEX_Digit(c) return false;
     
@@ -27,7 +24,7 @@ if (c = "." && i <= s) {
     do {
         c = string_char_at(vstr,i);
         if !_ML_LEX_Digit(c) return false;
-        ++i;
+        i+=1;
     } until (i > s)
 }
 

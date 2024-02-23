@@ -1,7 +1,5 @@
 ///_ML_PARSE_Function(parser, token, args)
-/// @argType    r,r,r
-/// @returnType void
-/// @hidden     true
+
 var a, argc , f, i, lhs, lhs_val, ret, t;
 
 var VARMAP = _ML_LiP_GetVarMap(argument0);
@@ -12,7 +10,7 @@ f = _ML_LiTok_GetOperator(token);
 argc = _ML_LiTok_GetArgcount(token);
 var argstring, exact_func;
 argstring = "";
-for (i = argc -1; i >= 0; --i) {
+for (i = argc -1; i >= 0; i -= 1) {
     lhs = ds_stack_pop(argstack);
     if (_ML_LiTok_GetType(lhs) == ML_TT_VALUE) {
         if (_ML_LiTok_GetOperator(lhs) == ML_VAL_REAL) {
@@ -34,8 +32,8 @@ for (i = argc -1; i >= 0; --i) {
 argstring = string_copy(argstring,1,string_length(argstring) - 1);
 exact_func = _ML_LiF_GetFunc(f, argstring)
 if (exact_func < 0) {
-    ML_RaiseException_CurParser(ML_EXCEPT_ARGTYPE,_ML_LiTok_GetPos(token),
-        "Invalid argument type for '" + string(_ML_LiTok_GetVal(token)) +"' at " +string(_ML_LiTok_GetPos(token)));
+    ML_RaiseException_CurParser(ML_EXCEPT_ARGTYPE,_ML_LiTok_GetPos(argument0),
+        "Invalid argument type for '" + string(_ML_LiTok_GetVal(argument0)) +"' at " +string(_ML_LiTok_GetPos(argument0)));
     _ML_LiTok_SetString(argument0, 0);
     _ML_LiTok_SetType(argument0, ML_TT_VALUE);
     _ML_LiTok_SetOperator(argument0, ML_VAL_REAL);
@@ -98,3 +96,4 @@ _ML_LiTok_SetString(token, ret);
 _ML_LiTok_SetType(token, ML_TT_VALUE);
 _ML_LiTok_SetOperator(token, _ML_LiS_GetRettype(exact_func));
 ds_stack_push(argstack,token);
+

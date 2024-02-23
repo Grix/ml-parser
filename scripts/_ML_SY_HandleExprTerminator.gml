@@ -1,7 +1,4 @@
 ///_ML_SY_HandleExprTerminator(parser, token, output, stack)
-/// @argType    r,r,r,r
-/// @returnType real
-/// @hidden     true
 var token, output, stack, parser;
 parser = argument0;
 token = argument1;
@@ -14,11 +11,8 @@ while (!ds_stack_empty(stack)) {
         ML_RaiseException(parser, ML_EXCEPT_PARENTHESIS, _ML_LiTok_GetPos(t),
             "Mismatched parenthesis for '" + string(_ML_LiTok_GetVal(t)) +"' at " +string(_ML_LiTok_GetPos(t)));
     } else {
-        //ds_queue_enqueue(output, t);
-        ds_list_add(output, t);
+        ds_queue_enqueue(output, t);
     }
     //add top operator to output
 }
-//ds_queue_enqueue(output,token);
-ds_list_add(output, token);
-return false;
+ds_queue_enqueue(output,token);

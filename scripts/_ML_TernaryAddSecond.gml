@@ -1,7 +1,5 @@
-/// _ML_TernaryAddSecond(parser, oper_2_string, ternary_id)
-/// @argType    r,s,r
-/// @returnType r
-/// @hidden     true
+/// _ML_TernaryAddSecond(parser, operatorstring, index)
+
 var P_TERNOPER2 = _ML_LiP_GetTernOps2Table(argument0);
 var entry;
 if (ds_map_exists(P_TERNOPER2,argument1)) {

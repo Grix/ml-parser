@@ -1,7 +1,4 @@
-///_ML_LEX_IsAssignoper(parser, token, prevtok)
-/// @argType    r,r,r
-/// @returnType r
-/// @hidden     true
+///_ML_LEX_IsAssignOper(parser, str, prevtok)
 
 var vstr, ret, prevtok, t;
 var P_ASSIGNOPER = _ML_LiP_GetAssignOpsTable(argument0);

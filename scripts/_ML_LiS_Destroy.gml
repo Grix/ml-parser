@@ -1,6 +1,4 @@
-///_ML_LiS_Destroy(index)
-/// @argType    r
-/// @returnType void
-/// @hidden     true
+///_ML_LiFS_Destroy(index)
+
 ds_list_destroy(argument0);
 

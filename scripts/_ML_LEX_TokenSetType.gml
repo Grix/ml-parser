@@ -1,9 +1,6 @@
 ///_ML_LEX_TokenSetType(parser, token, type)
-/// @argType    r,r,r
-/// @returnType void
-/// @hidden     true
 
-
+//from scope of token
 var tok = argument1;
 var tokentype = argument2;
 var tokenval = string(_ML_LiTok_GetVal(tok));
@@ -57,3 +54,4 @@ switch (tokentype) {
 
 _ML_LiTok_SetType(tok, tokentype);
 _ML_LiTok_SetOperator(tok, operator);
+

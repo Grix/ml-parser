@@ -1,7 +1,5 @@
 ///ML_InitParserEmpty(VarMap)
-/// @argType    r
-/// @returnType real
-/// @hidden     false
+
 /*
 **  Usage:
 **      ML_InitParserEmpty(VarMap)
@@ -21,4 +19,3 @@ var ind = _ML_LiP_Create("", argument0);
 global._ML_CURRENTPARSER_ = ind;
 
 return ind;
-

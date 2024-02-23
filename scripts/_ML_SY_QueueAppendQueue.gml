@@ -1,7 +1,4 @@
 ///_ML_SY_QueueAppendQueue(q1, q2);
-/// @argType    r,r
-/// @returnType void
-/// @hidden     true
 //appends q2 to q1
 
 var q1, q2;

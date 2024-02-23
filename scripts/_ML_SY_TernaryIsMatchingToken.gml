@@ -1,7 +1,4 @@
-/// _ML_SY_TernaryIsMatchingToken(token1, map)
-/// @argType    r,r
-/// @returnType real
-/// @hidden     true
+//ML_SY_TernaryIsMatchingToken(token1, map)
 //tests if token is in map
 var t1, o1, entry;
 t1 = argument0;

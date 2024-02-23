@@ -1,7 +1,3 @@
-///_ML_LEX_Cntrl(char)
-/// @argType    s
-/// @returnType r
-/// @hidden     true
-//checks  if character is controll 
+//echecks  if character is alpha
 var v = ord(argument0);
-return (v <= 31);
+return (v <= 31)

@@ -1,7 +1,5 @@
 ///_ML_LiTOp_Create(name_P1, name_P2, precedence, associativity)
-/// @argType    s,s,r,r
-/// @returnType real
-/// @hidden     true
+
 
 var l = ds_list_create();
 ds_list_add(l, argument0 + argument1); //fullname

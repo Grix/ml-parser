@@ -1,7 +1,4 @@
-///_ML_LEX_IsBinoper(parser, token, prevtok)
-/// @argType    r,r,r
-/// @returnType r
-/// @hidden     true
+///_ML_LEX_IsBinoper(parser, str, prevtok)
 
 var P_BINOPER = _ML_LiP_GetBinOpsTable(argument0);
 var vstr, p, ret, prevtok, t;

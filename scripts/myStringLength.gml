@@ -1,2 +1,1 @@
-var len = string_length(argument0);
-return len;
+return string_length(argument0);
