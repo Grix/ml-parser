@@ -10,6 +10,9 @@ I have tried to reconstruct the original SVN repo as best I could, with git bran
 This is the trunk branch, with the following comment in the original readme: 
 
 **Input in rmShowComp**
+
 **[enter] Execute compilation**
+
 **[ctrl] Compile + execute**
+
 **[alt] Interpet**
