@@ -5,6 +5,8 @@ Originally made by Paul Weijtens
 
 Mirror of the original (now archived and largely broken) repository at Google Code: https://code.google.com/archive/p/ml-parser/
 
+This library is in use in my LaserShowGen app: https://github.com/Grix/ildagen
+
 I have tried to reconstruct the original SVN repo as best I could, with git branches for a total of three SVN branches. It is unclear which is the newest version. The scripts were made for old GM versions but should be compatible with new GMS2 also. Maybe now example project or extension files though.
 
 This is the trunk branch, with the following comment in the original readme: 
