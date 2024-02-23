@@ -16,7 +16,7 @@ while (!ds_list_empty(rpn) && expression_terminator == false && ML_NoException(p
 }
 if (ML_NoException(parser)) {
     if (ds_stack_size(args) > 1) {
-        ML_RaiseException(ML_EXCEPT_VALUE,-1,
+        ML_RaiseException(parser,ML_EXCEPT_VALUE,-1,
             "missing operator or function in expression");
     }
 }
